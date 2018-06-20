@@ -187,9 +187,13 @@ MMC vs eMMC vs NAND vs NOR
 --------------------------
 MMC - Multi Media Card  is similar to an SD card.
 eMMC - 
-The eMMC (embedded MMC) architecture puts the MMC components (flash memory plus controller) into a small ball grid array (BGA) IC package for use in circuit boards as an embedded non-volatile memory system. This is noticeably different from other versions of MMC as this is not a user-removable card, but rather a permanent attachment to the circuit board. eMMC also does not support the SPI-bus protocol.
+The eMMC (embedded MMC) architecture puts the MMC components (flash memory plus controller) 
+into a small ball grid array (BGA) IC package for use in circuit boards as an embedded non-volatile memory system. 
+This is noticeably different from other versions of MMC as this is not a user-removable card, 
+but rather a permanent attachment to the circuit board. eMMC also does not support the SPI-bus protocol.
 
-eMMC is great example of "managed NAND." These mass storage devices contain NAND flash memory along with other related controller and interface circuits. 
+eMMC is great example of "managed NAND." These mass storage devices contain NAND flash memory.
+Along with other related controller and interface circuits. 
 
 How to create SDCard/eMMC Partition:
 -----------------------------------
@@ -200,6 +204,7 @@ replacing /dev/sdX with the name of the microSD Card in your system.
 1.Begin partitioning the microSD Card by typing   ( sudo fdisk /dev/sdX )
 2.Initialize a new partition table by selecting ( o ), then verify the partition table is empty by selecting ( p ).
 3.Create a boot partition by selecting ( n ) for ‘new’, then ( p ) for ‘primary’, and ( 1 ) to specify the first partition. Press ( enter ) to accept the default first sector and specify ( 4095 ) for the last sector.
+  here after use +2G for end of memory(if 8gb is there).
 4.Change the partition type to FAT16 by selecting ( t ) for ‘type’ and ( e ) for ‘W95 FAT16 (LBA)’.
 5.Set the partition bootable by selecting ( a ) then ( 1 ).
 6.Next, create the data partition for the root filesystem by selecting ( n ) for ‘new’, then ( p ) for ‘primary’, and ( 2 ) to specify the second partition. Accept the default values for the first and last sectors by pressing ( enter twice ).
